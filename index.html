@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Kana</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans JP">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC">
+
+  <style>
+    body {
+      font-family: "Noto Sans JP", "Noto Sans TC", sans-serif;
+    }
+
+    h1 {
+      position: relative;
+      top: 0;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      text-align: right;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    .chart-table {
+      border-spacing: 3px;
+    }
+
+    .chart-cell {
+      display: inline-block;
+    }
+
+    .chart-cell-grid {
+      display: grid;
+      grid-template-areas:
+        "romaji"
+        "main";
+    }
+
+    .chart-cell-table {
+      border-radius: 16px;
+      border-spacing: 0;
+      z-index: 1;
+      grid-area: main;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .chart-cell-table-in-use {
+      border: 4px solid;
+    }
+
+    .chart-cell-table-deprecated {
+      border: 4px dashed;
+    }
+
+    td:empty::after {
+      content: "\00a0";
+    }
+
+    .kana {
+      font-size: 2.5em;
+    }
+
+    .kanji {
+      border-top: 1px solid;
+      font-size: 1em;
+      height: 50px;
+    }
+
+    .hiragana {
+      border-right: 1px solid;
+      color: #A06D7F;
+    }
+
+    .katakana {
+      border-right: 1px solid;
+      color: #75D1B3;
+    }
+    .hira{
+      color:#A06D7F;
+    }
+
+    .kata{
+      color:#75D1B3;
+    }
+
+
+    .kanji-hiragana {
+      border-right: 1px solid;
+    }
+
+    .romaji {
+      font-size: 0.8em;
+      z-index: 2;
+      grid-area: romaji;
+      align-self: start;
+      justify-self: center;
+      border: 2px solid;
+      border-radius: 0.8em;
+      padding: 0px 8px;
+      margin-bottom: 2px;
+    }
+
+
+    svg {
+      width: 45px;
+      height: auto;
+      /* maintain aspect ratio */
+      transition: opacity 1s;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+
+    .title {
+      writing-mode: vertical-rl;
+      /* Right-to-left vertical */
+      text-orientation: mixed;
+      /* Optional: allow upright characters */
+      align-self: center;
+      font-size: 3em;
+      margin-right: 10em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <table class="chart-table">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">wa</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">わ</td>
+                      <td class="kana katakana">ワ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ra</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ら</td>
+                      <td class="kana katakana">ラ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ya</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">や</td>
+                      <td class="kana katakana">ヤ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ma</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ま</td>
+                      <td class="kana katakana">マ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ha</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">は</td>
+                      <td class="kana katakana">ハ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">na</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">な</td>
+                      <td class="kana katakana">ナ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ta</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">た</td>
+                      <td class="kana katakana">タ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">sa</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">さ</td>
+                      <td class="kana katakana">サ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ka</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">か</td>
+                      <td class="kana katakana">カ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">a</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">あ</td>
+                      <td class="kana katakana">ア</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">wi</div>
+                <table class="chart-cell-table chart-cell-table-deprecated">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ゐ</td>
+                      <td class="kana katakana">ヰ</td>
+                    </tr>
+                    <tr>
+
+                      <td class="kanji" colspan="2"></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ri</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">り</td>
+                      <td class="kana katakana">リ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td></td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">mi</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">み</td>
+                      <td class="kana katakana">ミ</td>
+                    </tr>
+                    <tr>
+
+                      <td class="kanji" colspan="2"></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">hi</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ひ</td>
+                      <td class="kana katakana">ヒ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ni</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">に</td>
+                      <td class="kana katakana">ニ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">chi</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ち</td>
+                      <td class="kana katakana">チ</td>
+                    </tr>
+                    <tr>
+
+                      <td class="kanji" colspan="2"></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">shi</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">し</td>
+                      <td class="kana katakana">シ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ki</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">き</td>
+                      <td class="kana katakana">キ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">i</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">い</td>
+                      <td class="kana katakana">イ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">n</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ん</td>
+                      <td class="kana katakana">ン</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td></td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ru</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">る</td>
+                      <td class="kana katakana">ル</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">yu</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ゆ</td>
+                      <td class="kana katakana">ユ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">mu</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">む</td>
+                      <td class="kana katakana">ム</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">hu</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ふ</td>
+                      <td class="kana katakana">フ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">nu</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ぬ</td>
+                      <td class="kana katakana">ヌ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">tsu</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">つ</td>
+                      <td class="kana katakana">ツ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">su</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">す</td>
+                      <td class="kana katakana">ス</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ku</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">く</td>
+                      <td class="kana katakana">ク</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">u</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">う</td>
+                      <td class="kana katakana">ウ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">we</div>
+                <table class="chart-cell-table chart-cell-table-deprecated">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ゑ</td>
+                      <td class="kana katakana">ヱ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">re</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">れ</td>
+                      <td class="kana katakana">レ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td></td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">me</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">め</td>
+                      <td class="kana katakana">メ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">he</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">へ</td>
+                      <td class="kana katakana">ヘ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ne</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ね</td>
+                      <td class="kana katakana">ネ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">te</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">て</td>
+                      <td class="kana katakana">テ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">se</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">せ</td>
+                      <td class="kana katakana">セ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ke</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">け</td>
+                      <td class="kana katakana">ケ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">e</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">え</td>
+                      <td class="kana katakana">エ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">wo</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">を</td>
+                      <td class="kana katakana">ヲ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ro</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ろ</td>
+                      <td class="kana katakana">ロ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">yo</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">よ</td>
+                      <td class="kana katakana">ヨ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">mo</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">も</td>
+                      <td class="kana katakana">モ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ho</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">ほ</td>
+                      <td class="kana katakana">ホ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">no</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">の</td>
+                      <td class="kana katakana">ノ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">to</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">と</td>
+                      <td class="kana katakana">ト</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">so</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">そ</td>
+                      <td class="kana katakana">ソ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">ko</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">こ</td>
+                      <td class="kana katakana">コ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="chart-cell">
+              <div class="chart-cell-grid">
+                <div class="romaji">o</div>
+                <table class="chart-cell-table chart-cell-table-in-use">
+                  <tbody>
+                    <tr>
+                      <td class="kana hiragana">お</td>
+                      <td class="kana katakana">オ</td>
+                    </tr>
+                    <tr>
+                      <td class="kanji" colspan="2"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="title"><span class="hira">Hiragana</span> & <span class="kata">Katakana</span></div>
+  </div>
+
+
+
+
+  <script>
+
+
+
+    function getRadioValue(name) {
+      let list = document.querySelectorAll('[name="' + name + '"]');
+      for (let k = 0; k < list.length; k++) if (list[k].checked) return list[k].value;
+      return "Ja";
+    }
+
+    function run(s, clickedElement) {
+      if (!s.match(/<svg/)) {
+        const tbody = clickedElement.closest('tbody');
+        const kanjiElement = tbody.querySelector('.kanji');
+        if (kanjiElement) {
+          kanjiElement.innerHTML = "Data not found!";
+        }
+        return;
+      }
+      const tbody = clickedElement.closest('tbody');
+      const kanjiElement = tbody.querySelector('.kanji');
+      if (kanjiElement) {
+        kanjiElement.innerHTML = s;
+      }
+    }
+
+
+    function doIt() {
+      let e = document.querySelector('[name="char"]'),
+        c = e.value;
+      document.getElementById("a").innerHTML = "";
+      if (c) {
+        let dec = c.codePointAt(0),
+          lang = getRadioValue("lang");
+        e.value = String.fromCodePoint(dec);
+        fetch('../svgs' + lang + '/' + dec + '.svg')
+          .then(r => {
+            if (!r.ok) throw r.statusText;
+            return r.text();
+          })
+          .then(r => {
+            run(r, this);
+            return true;
+          })
+          .catch(e => document.getElementById("a").innerHTML = e + ' in svgs' + lang);
+      }
+    }
+
+    // Add event listeners to kana elements
+    let kanaElements = document.querySelectorAll('.hiragana, .katakana');
+    kanaElements.forEach(kana => {
+      kana.addEventListener('click', function (event) {
+        let svgFile = 'svg' + '/' + encodeURIComponent(this.innerText.charCodeAt(0)) + '.svg';
+        fetch(svgFile)
+          .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch SVG');
+            return response.text();
+          })
+          .then(svgContent => {
+            run(svgContent, this);
+          })
+          .catch(error => console.error('Error loading SVG:', error));
+      });
+    });
+
+
+
+  </script>
+</body>
+
+</html>
